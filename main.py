@@ -8,6 +8,7 @@ from sklearn.metrics import precision_score
 from sklearn.metrics import recall_score
 from sklearn.metrics import f1_score
 from sklearn.metrics import accuracy_score
+
 ### Confusion_Matrix
 
 
@@ -61,6 +62,7 @@ f1 = f1_score(y_test, y_prediction, average='weighted')
 Acc = accuracy_score(y_test, y_prediction)
 
 st.subheader('Model Evaluation')
+st.markdown('(*RandomForestClassifier*)')
 st.caption("#comfusion matrix")
 df_comfusion = pd.DataFrame(confunsion_mat, columns=["setosa-pred", "versicolor-pred", "virginica-pred"], index=["setosa-true", "versicolor-true", "virginica-true"])
 st.dataframe(df_comfusion.style.highlight_max(axis=0), use_container_width=True)
